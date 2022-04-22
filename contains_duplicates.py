@@ -19,13 +19,12 @@ class Solution(object):
         :type nums: List[int]
         :rtype: bool
         """
-        self.nums = nums
+        set_nums = set(nums)
                 
-        for idx,num in enumerate(self.nums):                
-            if num in self.nums[idx+1::]:
-                output = True
-                break
-            else:
-                output = False
+        if len(set_nums)<len(nums):
+            output = True
+        else:
+            output = False
             
         return output
+        
